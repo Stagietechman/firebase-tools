@@ -135,3 +135,10 @@ jobs:
       - run: npm install
       - run: npm run generate:json-schema
       - run: "git diff --exit-code -- schema/*.json || (echo 'Error: JSON schema is changed! Please run npm run generate:json-schema and commit the results.' && false)"
+- name: Setup MATLAB
+  # You may pin to the exact commit or the version.
+  # uses: matlab-actions/setup-matlab@bfca1c30aa37e57792ad04e5c68bf4ff33218b6d
+  uses: matlab-actions/setup-matlab@v1.0.1
+  with:
+    # MATLAB release to set up (R2020a or later)
+    release: # optional, default is latest
